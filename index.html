@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🎂 عيد ميلاد سعيد يا بن سعيد</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Tahoma,Arial,sans-serif}
+body{overflow-x:hidden;background:radial-gradient(circle at 50% 10%,#43206b 0,#17102c 42%,#07050d 100%);color:#fff}
+#sky{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;opacity:.7;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{opacity:.15;transform:scale(.5)}}
+main{min-height:100vh;display:grid;place-items:center;padding:35px 15px}
+.card{width:min(760px,94vw);text-align:center;padding:38px 22px 32px;border-radius:34px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(16px);box-shadow:0 30px 100px #0009}
+.crown{font-size:48px;animation:float 2.5s ease-in-out infinite}@keyframes float{50%{transform:translateY(-10px)}}
+.kicker{color:#ffe28a;font-size:14px;letter-spacing:1px}
+h1{font-size:clamp(48px,12vw,90px);margin:8px 0;color:#ffe28a;text-shadow:0 0 35px #ffd65b66}
+h2{font-size:clamp(23px,5vw,38px);margin:0 0 15px}
+.msg{max-width:610px;margin:auto;font-size:18px;line-height:2;color:#f3eef9}
+.btn{margin-top:22px;border:0;border-radius:999px;padding:14px 25px;font-weight:bold;font-size:16px;cursor:pointer;background:#ffe28a;color:#17102c}
+.qr{margin:28px auto 0;background:#fff;color:#17102c;padding:16px;border-radius:22px;width:225px}
+.qr img{width:190px;height:190px;display:block;margin:auto}.qr b{display:block;margin-top:9px;font-size:13px}
+.balloon{position:fixed;bottom:-130px;font-size:55px;animation:rise 9s linear infinite;z-index:2;pointer-events:none}
+@keyframes rise{to{transform:translateY(-125vh) rotate(15deg)}}
+.conf{position:fixed;top:-30px;width:9px;height:20px;animation:drop 5s linear infinite;z-index:3}
+@keyframes drop{to{transform:translateY(115vh) rotate(720deg)}}
+footer{margin-top:22px;color:#aaa;font-size:12px}
+</style>
+</head>
+<body>
+<div id="sky"></div>
+<main><section class="card">
+<div class="crown">👑</div>
+<div class="kicker">يوم ميلاد شخص غالي ومميز</div>
+<h1>بن سعيد</h1>
+<h2>🎂 كل عام وأنت بخير 🎉</h2>
+<p class="msg">يا بن سعيد، أتمنى لك سنة جديدة أجمل من كل السنوات الماضية، مليئة بالفرح والنجاح والضحكات واللحظات التي تستحق أن تُحفظ في القلب. 🤍<br><b>عسى أيامك كلها سعادة، وعقبال 100 سنة!</b> ✨</p>
+<button class="btn" onclick="celebrate()">🎆 اضغط هنا للاحتفال</button>
+<div class="qr"><img src="birthday_qr.png" alt="QR"><b>📱 امسح الباركود لفتح التهنئة</b></div>
+<footer>صُمم بحب خصيصًا لـ بن سعيد 💜</footer>
+</section></main>
+<script>
+const sky=document.getElementById('sky');
+for(let i=0;i<90;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*2+'s';sky.appendChild(s)}
+function confetti(){for(let i=0;i<45;i++){let c=document.createElement('i');c.className='conf';c.style.left=Math.random()*100+'vw';c.style.animationDelay=Math.random()*1.5+'s';c.style.background=['#ffe28a','#ff75ad','#8ee8ff','#b995ff'][i%4];document.body.appendChild(c);setTimeout(()=>c.remove(),6500)}}
+for(let i=0;i<8;i++){let b=document.createElement('div');b.className='balloon';b.textContent=['🎈','🎈','🎈','🎈'][i%4];b.style.left=(5+i*12)+'%';b.style.animationDelay=(i*.8)+'s';document.body.appendChild(b)}
+function celebrate(){confetti();document.querySelector('.btn').textContent='🎉 كل عام وأنت بخير يا بن سعيد! 🎉'}
+</script>
+</body>
+</html>
